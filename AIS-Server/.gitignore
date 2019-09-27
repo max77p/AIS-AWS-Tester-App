@@ -1,0 +1,14 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+serverless.yml
+
+# Files to exclude
+ais-query.js
+testfile.js
+
+# webpack folder
+.webpack
