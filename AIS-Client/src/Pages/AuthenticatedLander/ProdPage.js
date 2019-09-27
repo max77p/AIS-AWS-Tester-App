@@ -15,7 +15,7 @@ export default class AuthPage extends Component {
         gettingApi: false,
         successApi: false,
         errorApi: false,
-        userClick: 0
+        prodClick: false
       }
     };
   }
@@ -29,7 +29,8 @@ export default class AuthPage extends Component {
         userClick: 1,
         startingApi: true,
         loadingApi: true,
-        gettingApi: true
+        gettingApi: true,
+        prodClick:true
       }
     }));
 
@@ -68,13 +69,13 @@ export default class AuthPage extends Component {
     } else if (startingApi && !successApi && !errorApi) {
       return (
         <div class="col-sm-12">
-          <i class="fas fa-spinner fa-spin"></i> <span>Starting</span>
+          <i class="fas fa-spinner fa-spin"></i> <span>Initializing</span>
         </div>
       );
     } else if (!startingApi && successApi) {
       return (
         <div class="col-sm-12">
-          <i class={`fas fa-check ${classes["auth__done"]}`}></i> Done Starting
+          <i class={`fas fa-check ${classes["auth__done"]}`}></i> Initialized
         </div>
       );
     } else if (!startingApi && errorApi) {
@@ -99,15 +100,40 @@ export default class AuthPage extends Component {
       );
     }
   }
+
+  renderButton() {
+    if (!this.state.status.prodClick) {
+      return (
+        <button
+          type="button"
+          class={`btn btn-primary ${classes["auth__btn"]}`}
+          onClick={this.handleSubmit}
+        >
+          PROD
+        </button>
+      );
+    }
+    else{
+      return (
+        <button
+          type="button"
+          class={`btn btn-primary ${classes["auth__btn"]}`}
+          onClick={this.handleSubmit}
+          disabled
+        >
+          Test Complete. Check result.
+        </button>
+      );
+    }
+  }
   render() {
     return (
-        <StatusContainer
-          handleSubmit={this.handleSubmit}
-          btnName="PROD"
-          name="PROD AIS TEST"
-          renderStartingApiStatus={this.renderStartingApiStatus()}
-          renderSuccess={this.renderSuccess()}
-        />
+      <StatusContainer
+        name="PROD AIS TEST"
+        renderStartingApiStatus={this.renderStartingApiStatus()}
+        renderSuccess={this.renderSuccess()}
+        renderButton={this.renderButton()}
+      />
     );
   }
 }

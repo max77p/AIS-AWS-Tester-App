@@ -2,15 +2,24 @@
   width: 20em;
     max-width: 100%;
 }
-
+.auth__title{
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0), 0px 1px 13px rgba(0, 0, 0, 0.19);
+  background-color: #f8f9fa!important;
+}
 .auth__main{
   /* border: 2px solid red; */
   display: flex;
   justify-content: center;
 }
-.auth__main div {
-  border: 1px solid black;
+.auth__title{
+  text-align:center;
+}
+.auth__body{
+  /* border: 1px solid black; */
+  padding:1em 0 1em 0;
   text-align: center;
+  background-color: #f8f9fa!important;
+  box-shadow: 0px 0px 38px rgba(0, 0, 0, 0.23), 0px 2px 12px rgba(0, 0, 0, 0.16);
 }
 
 .auth__btn {
