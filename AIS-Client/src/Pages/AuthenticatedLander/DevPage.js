@@ -57,7 +57,7 @@ export default class AuthPage extends Component {
 
   getAis() {
     console.log("test");
-    return API.post("ais", "/ais", { body: "test" });
+    return API.get("ais", "/aisdev");
   }
 
   renderStartingApiStatus() {

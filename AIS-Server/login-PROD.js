@@ -23,7 +23,7 @@ export async function main(event, context, callback) {
     };
   }
   let userparams = {
-    Name: "ais-dev",
+    Name: "ais-prod",
     WithDecryption: true
   };
   function buildFinalResponse(token,query){

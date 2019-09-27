@@ -3,7 +3,7 @@ const axios = require("axios");
 export function getLogin(params) {
   return axios({
     method: "POST",
-    url: params.DevUrl,
+    url: params.Url,
     withCredentials: true,
     data: {
       username: params.User.username,
@@ -15,7 +15,7 @@ export function getLogin(params) {
 export function getQuery(params,data) {
   return axios({
     method: "POST",
-    url: params.DevUrl,
+    url: params.Url,
     withCredentials: true,
     data: data
   });
