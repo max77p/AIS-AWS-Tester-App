@@ -6,7 +6,7 @@ import NotFound from "../containers/NotFound/NotFound";
 import AppliedRoute from "../components/AppliedRoute";
 import AuthenticatedRoute from "../components/AuthenticatedRoute";
 import UnauthenticatedRoute from "../components/UnauthenticatedRoute";
-import AuthContainer from "../Pages/AuthenticatedLander/AuthContainer";
+import MainContainer from "../Pages/AuthenticatedLander/MainContainer";
 
 
 export default ({childProps}) => {
@@ -25,7 +25,7 @@ export default ({childProps}) => {
       <AuthenticatedRoute
         path="/auth/home"
         exact
-        component={AuthContainer}
+        component={MainContainer}
         props={childProps}
       />
 

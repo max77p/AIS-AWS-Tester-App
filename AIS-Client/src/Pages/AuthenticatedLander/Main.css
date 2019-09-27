@@ -1,4 +1,6 @@
 .Home {
+  width: 20em;
+    max-width: 100%;
 }
 
 .auth__main{
@@ -14,4 +16,18 @@
 .auth__btn {
   margin-top:6em;
   margin-bottom:1em;
+}
+
+.auth__done{
+  color:green;
+}
+.auth__success{
+  color: green;
+}
+.auth__error{
+  color:red;
+}
+
+.auth__error,span{
+  color:red;
 }

@@ -36,6 +36,7 @@ export async function main(event, context, callback) {
     let devUser = await ssm.getParameter(userparams).promise();
     console.log(devUser);
     let devArray=devUser.Parameter.Value.split(",");
+    console.log(devArray);
     let newLoginParams = paramsloginBuilder(devArray[2],devArray[0],devArray[1]);
     let token = await authLib.getLogin(newLoginParams); // token.data.userInfo.token? console.log("token received"):console.log("no token");
     let newQueryParams = paramsQueryBuilder(devArray[3],token.data.userInfo.token);
@@ -52,5 +53,5 @@ export async function main(event, context, callback) {
   } catch (e) {
     console.log(e);
     return failure(e);
-  } // serverless invoke local --function get --path mocks/test.json
+  }
 }
